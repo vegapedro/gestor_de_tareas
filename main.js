@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const contrasena = document.getElementById('contrasena').value;
 
             // Validación simple: permite el acceso si ambos campos están llenos.
-            if (correo && contrasena) {
-                window.location.href = "dashboard.html"; // Redirigir al dashboard
-            } else {
+            if (!correo || !contrasena) {
                 M.toast({ html: "Por favor, completa ambos campos." });
+            } else if (contrasena.length < 8) {
+                M.toast({ html: "La contraseña debe tener al menos 8 caracteres." });
+            } else {
+                window.location.href = "dashboard.html"; // Redirigir al dashboard
             }
         });
     }
