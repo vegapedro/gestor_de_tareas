@@ -21,16 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const correo = document.getElementById('correo').value;
             const contrasena = document.getElementById('contrasena').value;
 
-            // Simulación con credenciales correctas
+            // Validación simple: permite el acceso si ambos campos están llenos.
             if (correo && contrasena) {
-							window.location.href = "dashboard.html"; // Redirigir al dashboard
-						} else if (!correo || !contrasena) {
-							M.toast({ html: "Por favor, completa ambos campos." });
-						} else {
-							M.toast({
-								html: "Credenciales incorrectas. Inténtalo de nuevo.",
-							});
-						}
+                window.location.href = "dashboard.html"; // Redirigir al dashboard
+            } else {
+                M.toast({ html: "Por favor, completa ambos campos." });
+            }
         });
     }
 
@@ -101,4 +97,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
