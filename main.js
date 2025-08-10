@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const contrasena = document.getElementById('contrasena').value;
 
             // Simulación con credenciales correctas
-            if (correo === "scrumtask@gmail.com" && contrasena === "123456") {
+            if (correo && contrasena) {
 							window.location.href = "dashboard.html"; // Redirigir al dashboard
 						} else if (!correo || !contrasena) {
 							M.toast({ html: "Por favor, completa ambos campos." });
@@ -101,3 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
